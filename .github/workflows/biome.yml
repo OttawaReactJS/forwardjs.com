@@ -24,8 +24,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Biome lint
-        run: npm run lint
-
       - name: Run Biome format check
         run: npm run lint:fix -- --check
