@@ -7,15 +7,9 @@ import Jetbrains from "../assets/jetbrains.svg";
 import JSNation from "../assets/jsnation.svg";
 import Owner from "../assets/owner.webp";
 import Shopify from "../assets/shopify.svg";
-import Spiria from "../assets/spiria.svg";
 import TalentLab from "../assets/talentlab.webp";
 
 const sponsors = [
-  {
-    name: "TalentLab",
-    logo: TalentLab,
-    href: "https://talentlab.com",
-  },
   { name: "Shopify", logo: Shopify, href: "https://shopify.com" },
   {
     name: "Fullscript",
@@ -23,7 +17,11 @@ const sponsors = [
     href: "https://fullscript.com",
   },
   { name: "Owner", logo: Owner, href: "https://owner.com" },
-  { name: "Spiria", logo: Spiria, href: "https://spiria.com" },
+  {
+    name: "TalentLab",
+    logo: TalentLab,
+    href: "https://talentlab.com",
+  },
   {
     name: "Jetbrains",
     logo: Jetbrains,
@@ -92,7 +90,7 @@ const sponsors = [
         display: flex;
         flex-direction: column;
         gap: var(--gap);
-        max-width: 1440px;
+        max-width: 1218px;
         margin: auto;
     }
 
@@ -104,7 +102,7 @@ const sponsors = [
 
     .marquee__hidden {
         display: none;
-        @media screen and (max-width: 1440px) {
+        @media screen and (max-width: 1218px) {
             display: flex;
         }
     }
@@ -117,7 +115,7 @@ const sponsors = [
         gap: 16px;
         animation: none;
 
-        @media screen and (max-width: 1440px) {
+        @media screen and (max-width: 1218px) {
             animation: scroll 12s linear infinite;
         }
     }
