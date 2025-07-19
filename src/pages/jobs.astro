@@ -1,0 +1,152 @@
+---
+import Card from "../components/Card.astro";
+import jobs from "../data/jobs.json";
+import projects from "../data/projects.json";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="ForwardJS - Job Board & Projects">
+  <main>
+    <div class="container">
+      <section class="section-container">
+        <h2 class="jobs-title">Jobs</h2>
+        {
+          jobs.length > 0 ? (
+            <div class="card-grid">
+              {jobs.map((job) => (
+                <Card
+                  href={job.applyLink}
+                  title={job.title}
+                  line1={job.company}
+                  line2={job.location}
+                />
+              ))}
+            </div>
+          ) : (
+            <p>No job listings available at the moment.</p>
+          )
+        }
+      </section>
+
+      <section class="section-container">
+        <h2 class="projects-title">Projects</h2>
+        {
+          projects.length > 0 ? (
+            <div class="card-grid">
+              {projects.map((project) => (
+                <Card
+                  href={project.link}
+                  title={project.title}
+                  line1={project.description}
+                  line2={`Skills: ${project.skills.join(", ")}`}
+                  hoverColor="var(--blue)"
+                />
+              ))}
+            </div>
+          ) : (
+            <p>No project listings available at the moment.</p>
+          )
+        }
+      </section>
+    </div>
+    <div class="footer-content">
+      <p>
+        To add a job or project, submit a pull request to our <a
+          href="https://github.com/OttawaReactJS/forwardjs.com"
+          target="_blank"
+          rel="noopener noreferrer">GitHub repository</a
+        >
+      </p>
+      <p>
+        Modify <code>src/data/jobs.json</code> for job postings or
+        <code>src/data/projects.json</code> for project listings.
+      </p>
+      <a
+        href="https://github.com/OttawaReactJS/forwardjs.com/pulls"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cta-button"
+      >
+        Create a Pull Request
+      </a>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0 auto 2rem;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-content p {
+    color: #555;
+  }
+
+  .cta-button {
+    background-color: var(--purple);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #5a3e8e;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1000px) {
+      grid-template-columns: 1fr;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  .section-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  }
+
+  .jobs-title,
+  .projects-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+  }
+
+  .jobs-title {
+    color: var(--purple);
+  }
+
+  .projects-title {
+    color: var(--blue);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+</style>

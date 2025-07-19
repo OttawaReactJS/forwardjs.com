@@ -1,0 +1,60 @@
+---
+const { href, title, line1, line2, hoverColor = "var(--purple)" } = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer" class="card-link">
+  <div class="card">
+    <h3 class="title">{title}</h3>
+    <p class="line1">{line1}</p>
+    <p class="line2">{line2}</p>
+  </div>
+</a>
+
+<style define:vars={{ hoverColor }}>
+  .card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    height: 100%;
+  }
+
+  .card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .card:hover {
+    border-color: var(--hoverColor);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  .line1 {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+
+  .line2 {
+    font-size: 0.9rem;
+    color: #777;
+  }
+</style>

@@ -24,18 +24,15 @@ import logo from "../assets/forward.svg";
         <li><a href="/#events">Events</a></li>
         <li>
           <a target="_blank" href="https://github.com/OttawaReactJS/talks"
-            >Talks</a
+            >Talk Proposals</a
           >
-        </li>
-        <li>
-          <a target="_blank" href="https://discord.gg/XMqZZtpPSK">Discord</a>
         </li>
         <li>
           <a
-            target="_blank"
-            href="https://www.meetup.com/ottawa-forwardjs-meetup/">Meetup</a
-          >
+            href="https://discord.gg/XMqZZtpPSK"
+            aria-label="Join our Discord server">Discord</a>
         </li>
+        <li><a href="/jobs">Job Board</a></li>
       </ul>
     </div>
   </nav>
@@ -199,6 +196,7 @@ import logo from "../assets/forward.svg";
 
   window.addEventListener("scroll", updateHeaderClass);
   document.addEventListener("DOMContentLoaded", updateHeaderClass);
+  document.addEventListener("astro:page-load", updateHeaderClass);
 
   // Handle mobile menu toggle
   document.addEventListener("DOMContentLoaded", function () {
