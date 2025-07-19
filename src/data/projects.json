@@ -1,0 +1,8 @@
+[
+  {
+    "title": "ForwardJS Website",
+    "description": "Contribute to the ForwardJS website!",
+    "skills": ["JavaScript", "Astro", "CSS"],
+    "link": "https://github.com/OttawaReactJS/forwardjs.com"
+  }
+]

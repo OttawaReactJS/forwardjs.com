@@ -1,0 +1,65 @@
+---
+const { project } = Astro.props;
+---
+
+<a
+  href={project.link}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="project-card-link"
+>
+  <div class="project-card">
+    <h3 class="project-title">{project.title}</h3>
+    <p class="project-description">{project.description}</p>
+    <p class="project-skills">Skills: {project.skills.join(", ")}</p>
+  </div>
+</a>
+
+<style>
+  .project-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .project-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .project-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  .project-description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+
+  .project-skills {
+    font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
+  }
+</style>

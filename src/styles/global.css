@@ -116,3 +116,8 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+@view-transition {
+  /* biome-ignore lint/correctness/noUnknownProperty: this does work */
+  navigation: auto;
+}
