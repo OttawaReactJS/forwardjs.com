@@ -8,6 +8,7 @@ import JSNation from "../assets/jsnation.svg";
 import Owner from "../assets/owner.webp";
 import Shopify from "../assets/shopify.svg";
 import TalentLab from "../assets/talentlab.webp";
+import InvestOttawa from "../assets/investottawa.webp";
 
 const sponsors = [
   { name: "Shopify", logo: Shopify, href: "https://shopify.com" },
@@ -31,6 +32,11 @@ const sponsors = [
     name: "JS Nation",
     logo: JSNation,
     href: "https://jsnation.us/",
+  },
+  {
+    name: "Invest Ottawa",
+    logo: InvestOttawa,
+    href: "https://bayviewyards.org/",
   },
 ];
 ---
@@ -84,7 +90,7 @@ const sponsors = [
     display: flex;
     flex-direction: column;
     gap: var(--gap);
-    max-width: 1218px;
+    max-width: 1418px;
     margin: auto;
   }
 
@@ -96,7 +102,7 @@ const sponsors = [
 
   .marquee__hidden {
     display: none;
-    @media screen and (max-width: 1218px) {
+    @media screen and (max-width: 1418px) {
       display: flex;
     }
   }
@@ -109,7 +115,7 @@ const sponsors = [
     gap: 16px;
     animation: none;
 
-    @media screen and (max-width: 1218px) {
+    @media screen and (max-width: 1418px) {
       animation: scroll 12s linear infinite;
     }
   }
