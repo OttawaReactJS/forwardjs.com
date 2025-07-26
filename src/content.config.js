@@ -9,4 +9,12 @@ const upcomingEvents = defineCollection({
   loader: file("./src/data/upcomingEvents.json"),
 });
 
-export const collections = { pastEvents, upcomingEvents };
+const jobs = defineCollection({
+  loader: file("./src/data/jobs.json"),
+});
+
+const projects = defineCollection({
+  loader: file("./src/data/projects.json"),
+});
+
+export const collections = { pastEvents, upcomingEvents, jobs, projects };

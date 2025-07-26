@@ -1,35 +1,41 @@
 [
   {
+    "slug": "senior-software-engineer-sdk",
     "title": "Senior Software Engineer, SDK",
     "company": "Sanity",
     "location": "Remote",
     "applyLink": "https://www.sanity.io/careers/senior-software-engineer-sdk"
   },
   {
+    "slug": "senior-software-engineer-runtime",
     "title": "Senior Software Engineer, Runtime",
     "company": "Sanity",
     "location": "Remote",
     "applyLink": "https://www.sanity.io/careers/senior-software-engineer-runtime"
   },
   {
+    "slug": "senior-software-engineer-full-stack",
     "title": "Senior Software Engineer, Full-Stack",
     "company": "Owner",
     "location": "Remote",
     "applyLink": "https://www.owner.com/careers/role?=a72058a0-6d4a-4310-8e01-68b950decf82"
   },
   {
+    "slug": "senior-software-engineer-mobile",
     "title": "Senior Software Engineer, Mobile (React Native)",
     "company": "Owner",
     "location": "Remote",
     "applyLink": "https://www.owner.com/careers/role?=6064ac48-76a2-49e5-b831-b5b9b46bf859"
   },
   {
+    "slug": "software-engineer-full-stack",
     "title": "Software Engineer, Full-Stack",
     "company": "Owner",
     "location": "Remote",
     "applyLink": "https://www.owner.com/careers/role?=7501bad4-5f21-45ea-8332-64e8fc5d52bf"
   },
   {
+    "slug": "staff-software-engineer-full-stack",
     "title": "Staff Software Engineer, Full-Stack",
     "company": "Owner",
     "location": "Remote",

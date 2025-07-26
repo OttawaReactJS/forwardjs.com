@@ -1,5 +1,6 @@
 [
   {
+    "slug": "forwardjs-website",
     "title": "ForwardJS Website",
     "description": "Contribute to the ForwardJS website!",
     "skills": ["JavaScript", "Astro", "CSS"],

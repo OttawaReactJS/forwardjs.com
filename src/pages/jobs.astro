@@ -1,8 +1,10 @@
 ---
+import { getCollection } from "astro:content";
 import Card from "../components/Card.astro";
-import jobs from "../data/jobs.json";
-import projects from "../data/projects.json";
 import Layout from "../layouts/Layout.astro";
+
+const jobs = await getCollection("jobs");
+const projects = await getCollection("projects");
 ---
 
 <Layout title="ForwardJS - Job Board & Projects">
@@ -15,10 +17,10 @@ import Layout from "../layouts/Layout.astro";
             <div class="card-grid">
               {jobs.map((job) => (
                 <Card
-                  href={job.applyLink}
-                  title={job.title}
-                  line1={job.company}
-                  line2={job.location}
+                  href={job.data.applyLink}
+                  title={job.data.title}
+                  line1={job.data.company}
+                  line2={job.data.location}
                 />
               ))}
             </div>
@@ -35,10 +37,10 @@ import Layout from "../layouts/Layout.astro";
             <div class="card-grid">
               {projects.map((project) => (
                 <Card
-                  href={project.link}
-                  title={project.title}
-                  line1={project.description}
-                  line2={`Skills: ${project.skills.join(", ")}`}
+                  href={project.data.link}
+                  title={project.data.title}
+                  line1={project.data.description}
+                  line2={`Skills: ${project.data.skills.join(", ")}`}
                   hoverColor="var(--blue)"
                 />
               ))}
