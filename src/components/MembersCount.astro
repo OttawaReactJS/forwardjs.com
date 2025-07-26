@@ -1,0 +1,17 @@
+---
+import { memberCount } from "../data/meetupStats.json";
+---
+
+<p class="members-count">{memberCount.toLocaleString()} Members</p>
+
+<style>
+  .members-count {
+    font-weight: 600;
+  }
+
+  @media (max-width: 1000px) {
+    .members-count {
+      display: none;
+    }
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 import logo from "../assets/forward.svg";
+import MembersCount from "./MembersCount.astro";
 ---
 
 <header>
@@ -23,18 +24,15 @@ import logo from "../assets/forward.svg";
       <ul>
         <li><a href="/#events">Events</a></li>
         <li>
-          <a target="_blank" href="https://github.com/OttawaReactJS/talks"
-            >Talk Proposals</a
-          >
+          <a target="_blank" href="https://github.com/OttawaReactJS/talks">Talk Proposals</a>
         </li>
         <li>
-          <a
-            href="https://discord.gg/XMqZZtpPSK"
-            aria-label="Join our Discord server">Discord</a>
+          <a href="https://discord.gg/XMqZZtpPSK" aria-label="Join our Discord server">Discord</a>
         </li>
         <li><a href="/jobs">Job Board</a></li>
       </ul>
     </div>
+    <MembersCount />
   </nav>
 </header>
 
@@ -184,52 +182,48 @@ import logo from "../assets/forward.svg";
 </style>
 
 <script is:inline>
-  const header = document.querySelector("header");
+  const header = document.querySelector('header');
 
   function updateHeaderClass() {
     if (window.scrollY > 0) {
-      header?.classList.add("scrolled");
+      header?.classList.add('scrolled');
     } else {
-      header?.classList.remove("scrolled");
+      header?.classList.remove('scrolled');
     }
   }
 
-  window.addEventListener("scroll", updateHeaderClass);
-  document.addEventListener("DOMContentLoaded", updateHeaderClass);
-  document.addEventListener("astro:page-load", updateHeaderClass);
+  window.addEventListener('scroll', updateHeaderClass);
+  document.addEventListener('DOMContentLoaded', updateHeaderClass);
+  document.addEventListener('astro:page-load', updateHeaderClass);
 
   // Handle mobile menu toggle
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menuToggle");
-    const navItems = document.getElementById("navItems");
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menuToggle');
+    const navItems = document.getElementById('navItems');
 
     if (menuToggle && navItems) {
-      menuToggle.addEventListener("click", function () {
-        navItems.classList.toggle("active");
-        menuToggle.classList.toggle("active");
+      menuToggle.addEventListener('click', function () {
+        navItems.classList.toggle('active');
+        menuToggle.classList.toggle('active');
       });
 
       // Close menu when clicking on a link
-      const navLinks = navItems.querySelectorAll("a");
-      navLinks.forEach((link) => {
-        link.addEventListener("click", function () {
-          navItems.classList.remove("active");
-          menuToggle.classList.remove("active");
+      const navLinks = navItems.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          navItems.classList.remove('active');
+          menuToggle.classList.remove('active');
         });
       });
 
       // Close menu when clicking outside
-      document.addEventListener("click", function (event) {
+      document.addEventListener('click', function (event) {
         const isClickInsideMenu = navItems.contains(event.target);
         const isClickOnToggle = menuToggle.contains(event.target);
 
-        if (
-          !isClickInsideMenu &&
-          !isClickOnToggle &&
-          navItems.classList.contains("active")
-        ) {
-          navItems.classList.remove("active");
-          menuToggle.classList.remove("active");
+        if (!isClickInsideMenu && !isClickOnToggle && navItems.classList.contains('active')) {
+          navItems.classList.remove('active');
+          menuToggle.classList.remove('active');
         }
       });
     }
