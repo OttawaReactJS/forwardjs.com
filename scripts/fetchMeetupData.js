@@ -3,7 +3,7 @@ import { writeFile } from "node:fs/promises";
 async function writeJsonToFile(filename, jsonData) {
   const jsonString = JSON.stringify(jsonData, null, 2);
 
-  await writeFile(filename, jsonString, "utf8");
+  await writeFile(filename, jsonString + "\n", "utf8");
 }
 
 async function fetchEvents(url) {
@@ -84,12 +84,12 @@ async function fetchEvents(url) {
 async function main() {
   try {
     const upcoming = await fetchEvents(
-      "https://www.meetup.com/ottawa-forwardjs-meetup/events/?type=upcoming"
+      "https://www.meetup.com/ottawa-forwardjs-meetup/events/?type=upcoming",
     );
     await writeJsonToFile("./src/data/upcomingEvents.json", upcoming);
 
     const past = await fetchEvents(
-      "https://www.meetup.com/ottawa-forwardjs-meetup/events/?type=past"
+      "https://www.meetup.com/ottawa-forwardjs-meetup/events/?type=past",
     );
     // write the last 5 past events to the JSON files
     await writeJsonToFile("./src/data/pastEvents.json", past.slice(0, 5));

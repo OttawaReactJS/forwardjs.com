@@ -3,63 +3,63 @@ import Icon from "./icons/Icon.astro";
 ---
 
 <footer>
-    <div class="container">
-        <span>Built with ❤️ in Ottawa 🇨🇦</span>
-        <ul class="links">
-            <li>
-                <a
-                    href="https://discord.gg/XMqZZtpPSK"
-                    aria-label="Join our Discord server"
-                >
-                    <Icon name="discord" inverted />
-                </a>
-            </li>
-            <li>
-                <a
-                    href="https://www.meetup.com/ottawa-forwardjs-meetup/"
-                    aria-label="Join our Meetup group"
-                >
-                    <Icon name="meetup" size={20} inverted /></a
-                >
-            </li>
-            <li>
-                <a
-                    href="https://github.com/OttawaReactJS/forwardjs.com"
-                    aria-label="View our GitHub repository"
-                >
-                    <Icon name="github" size={20} inverted />
-                </a>
-            </li>
-        </ul>
-    </div>
+  <div class="container">
+    <span>Built with ❤️ in Ottawa 🇨🇦</span>
+    <ul class="links">
+      <li>
+        <a
+          href="https://discord.gg/XMqZZtpPSK"
+          aria-label="Join our Discord server"
+        >
+          <Icon name="discord" inverted />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.meetup.com/ottawa-forwardjs-meetup/"
+          aria-label="Join our Meetup group"
+        >
+          <Icon name="meetup" size={20} inverted /></a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/OttawaReactJS/forwardjs.com"
+          aria-label="View our GitHub repository"
+        >
+          <Icon name="github" size={20} inverted />
+        </a>
+      </li>
+    </ul>
+  </div>
 </footer>
 
 <style>
-    footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 200px;
-        width: 100%;
-        background-color: #000;
-        color: #fff;
-        font-weight: 500;
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    font-weight: 500;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1000px;
+    padding: 0 2rem;
+    @media screen and (max-width: 1000px) {
+      width: 100%;
     }
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 1000px;
-        padding: 0 2rem;
-        @media screen and (max-width: 1000px) {
-            width: 100%;
-        }
-    }
-    .links {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
-    }
+  }
+  .links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
 </style>

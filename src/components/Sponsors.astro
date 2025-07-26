@@ -36,107 +36,101 @@ const sponsors = [
 ---
 
 <section>
-    <div class="sponsors">
-        <h2>PARTNERS</h2>
+  <div class="sponsors">
+    <h2>PARTNERS</h2>
 
-        <div class="marquee">
-            <ul>
-                {
-                    sponsors.map((sponsor) => (
-                        <li>
-                            <SponsorLink href={sponsor.href}>
-                                <Image
-                                    src={sponsor.logo}
-                                    alt={`${sponsor.name} Logo`}
-                                />
-                            </SponsorLink>
-                        </li>
-                    ))
-                }
-            </ul>
-            <!-- these items are hidden unless the marquee is active -->
-            <ul aria-hidden="true" class="marquee__hidden">
-                {
-                    sponsors.map((sponsor) => (
-                        <li>
-                            <SponsorLink href={sponsor.href} hidden>
-                                <Image
-                                    src={sponsor.logo}
-                                    alt={`${sponsor.name} Logo`}
-                                />
-                            </SponsorLink>
-                        </li>
-                    ))
-                }
-            </ul>
-        </div>
+    <div class="marquee">
+      <ul>
+        {
+          sponsors.map((sponsor) => (
+            <li>
+              <SponsorLink href={sponsor.href}>
+                <Image src={sponsor.logo} alt={`${sponsor.name} Logo`} />
+              </SponsorLink>
+            </li>
+          ))
+        }
+      </ul>
+      <!-- these items are hidden unless the marquee is active -->
+      <ul aria-hidden="true" class="marquee__hidden">
+        {
+          sponsors.map((sponsor) => (
+            <li>
+              <SponsorLink href={sponsor.href} hidden>
+                <Image src={sponsor.logo} alt={`${sponsor.name} Logo`} />
+              </SponsorLink>
+            </li>
+          ))
+        }
+      </ul>
     </div>
+  </div>
 </section>
 
 <style>
-    section {
-        display: flex;
-        width: 100%;
-        background: linear-gradient(90deg, var(--purple), var(--blue));
-        color: #fff;
-        padding: 2rem 1rem;
-        border: 4px solid #000;
-        border-width: 4px 0;
-        overflow-x: hidden;
-    }
+  section {
+    display: flex;
+    width: 100%;
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+    color: #fff;
+    padding: 2rem 1rem;
+    border: 4px solid #000;
+    border-width: 4px 0;
+    overflow-x: hidden;
+  }
 
-    .sponsors {
-        --gap: 16px;
-        display: flex;
-        flex-direction: column;
-        gap: var(--gap);
-        max-width: 1218px;
-        margin: auto;
-    }
+  .sponsors {
+    --gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    max-width: 1218px;
+    margin: auto;
+  }
 
-    .marquee {
-        display: flex;
-        flex-direction: row;
-        gap: var(--gap);
-    }
+  .marquee {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+  }
 
-    .marquee__hidden {
-        display: none;
-        @media screen and (max-width: 1218px) {
-            display: flex;
-        }
+  .marquee__hidden {
+    display: none;
+    @media screen and (max-width: 1218px) {
+      display: flex;
     }
+  }
 
-    ul {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        list-style: none;
-        gap: 16px;
-        animation: none;
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 16px;
+    animation: none;
 
-        @media screen and (max-width: 1218px) {
-            animation: scroll 12s linear infinite;
-        }
+    @media screen and (max-width: 1218px) {
+      animation: scroll 12s linear infinite;
     }
+  }
 
-    img {
-        height: 72px;
-        width: 135px;
-        object-fit: contain;
-    }
+  img {
+    height: 72px;
+    width: 135px;
+    object-fit: contain;
+  }
 
-    li {
-        display: flex;
-        width: 186px;
-    }
+  li {
+    display: flex;
+    width: 186px;
+  }
 
-    @keyframes scroll {
-        from {
-            transform: translateX(0);
-        }
-        to {
-            transform: translateX(calc(-100% - var(--gap)));
-        }
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
     }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
 </style>

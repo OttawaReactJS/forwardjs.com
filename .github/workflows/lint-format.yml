@@ -1,4 +1,4 @@
-name: Biome Lint and Format
+name: Lint and Format
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  lint:
+  lint-format:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,5 +24,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Biome lint
+      - name: Run ESLint
         run: npm run lint
+
+      - name: Run Prettier
+        run: npm run format
