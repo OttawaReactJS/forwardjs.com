@@ -1,0 +1,174 @@
+---
+import organizers from "../data/organizers.json";
+import { memberCount } from "../data/meetupStats.json";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="ForwardJS - Who We Are">
+  <div class="container">
+    <section class="flow">
+      <h2>What We're About</h2>
+      <p>
+        ForwardJS Ottawa (formerly React Ottawa) is a non-profit tech meetup
+        group dedicated to web development technologies and community.
+      </p>
+      <p>
+        Founded in 2018, we now have
+        <span class="font-semibold">{memberCount.toLocaleString()} members</span
+        >
+        and host monthly events that bring developers together to learn, share, and
+        connect.
+      </p>
+      <p>We host two types of events:</p>
+      <ul>
+        <li>Traditional meetups with guest speakers and tech talks.</li>
+        <li>Casual socials focused on community building.</li>
+      </ul>
+
+      <h3>Join Us</h3>
+      <p>
+        Whether you're just getting started or you're deep into your dev career,
+        we'd love to have you join us. <br />
+
+        <a
+          href="https://www.meetup.com/ottawa-forwardjs-meetup/"
+          target="_blank"
+          class="font-semibold with-icon"
+          >Become a member <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-external-link-icon lucide-external-link"
+            ><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            ></path></svg
+          ></a
+        > and get notified about upcoming events!
+      </p>
+    </section>
+
+    <section class="flow">
+      <h2>Meet Our Organizers</h2>
+
+      <div class="organizers">
+        {
+          organizers.map((organizer) => {
+            return (
+              <div class="organizer">
+                <div class="stack-lg">
+                  <picture class="organizer-picture">
+                    <img
+                      class="organizer-image"
+                      src={organizer.imageUrl}
+                      alt={organizer.altText}
+                      loading="lazy"
+                    />
+                  </picture>
+                  <div class="stack-xs">
+                    <h3>
+                      {organizer.firstName} {organizer.lastName}
+                    </h3>
+                    <p class="organizer-role font-semibold">{organizer.role}</p>
+                    <p>Joined {organizer.joined}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+    </section>
+  </div>
+
+  <style>
+    .container {
+      margin-inline: auto;
+      padding-inline: 1.5rem;
+      max-width: 1000px;
+    }
+
+    .container > * {
+      margin-block-end: 5rem;
+    }
+
+    .container > *:last-child {
+      margin-block-end: 3rem;
+    }
+
+    .flow > * + * {
+      margin-block-start: 1rem;
+    }
+
+    .flow > h2 + * {
+      margin-block-start: 3rem;
+    }
+
+    .flow > * + h3 {
+      margin-block-start: 2.25rem;
+    }
+
+    .organizers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .organizer {
+      flex: 1 1 300px;
+      background-color: #fff;
+      border-radius: 0.5rem;
+      padding: 3rem;
+      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    }
+
+    @media (min-width: 1000px) {
+      .organizer {
+        max-width: 307px;
+      }
+    }
+
+    .organizer-picture {
+      display: flex;
+    }
+
+    .organizer-image {
+      margin-inline: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      max-width: 150px;
+      max-height: 150px;
+    }
+
+    .stack-lg > * + * {
+      margin-block-start: 3rem;
+    }
+
+    .stack-xs > * + * {
+      margin-block-start: 0.25rem;
+    }
+
+    ul > li {
+      margin-left: 1rem;
+      padding-left: 0.25rem;
+    }
+
+    a[class*="with-icon"] {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.125rem;
+      margin-inline-end: 0.125rem;
+    }
+
+    .font-semibold {
+      font-weight: 600;
+    }
+  </style>
+</Layout>

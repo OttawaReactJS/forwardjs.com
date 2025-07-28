@@ -1,0 +1,67 @@
+[
+  {
+    "firstName": "Brian",
+    "lastName": "Farias Tavares",
+    "joined": "Jun, 2018",
+    "role": "Co-organizer",
+    "imageUrl": "https://secure.meetupstatic.com/photos/member/2/9/3/b/highres_321310555.jpeg",
+    "altText": "Photo of Brian Farias Tavares"
+  },
+  {
+    "firstName": "Eric",
+    "lastName": "Adamski",
+    "joined": "Jun, 2018",
+    "role": "Co-organizer",
+    "imageUrl": "https://secure.meetupstatic.com/photos/member/7/3/1/6/highres_257489462.jpeg",
+    "altText": "Photo of Eric Adamski"
+  },
+  {
+    "firstName": "Renee",
+    "lastName": "Ghattas",
+    "joined": "Jun, 2018",
+    "role": "Co-organizer",
+    "imageUrl": "https://secure.meetupstatic.com/photos/member/4/a/6/e/highres_316399054.jpeg",
+    "altText": "Photo of Renne Ghattas"
+  },
+  {
+    "firstName": "Simon",
+    "lastName": "MacDonald",
+    "joined": "Jun, 2018",
+    "role": "Co-organizer",
+    "imageUrl": "https://secure.meetupstatic.com/photos/member/2/b/7/e/highres_314171134.jpeg",
+    "altText": "Photo of Simon MacDonald"
+  },
+
+  {
+    "firstName": "Rey",
+    "lastName": "Riel",
+    "joined": "Jun, 2018",
+    "role": "Co-organizer",
+    "imageUrl": "https://secure.meetupstatic.com/photos/member/5/8/5/highres_259921413.jpeg",
+    "altText": "Photo of Rey Riel"
+  },
+  {
+    "firstName": "Matt",
+    "lastName": "Dupont",
+    "joined": "Feb, 2023",
+    "role": "Co-organizer",
+    "imageUrl": "https://secure.meetupstatic.com/photos/member/6/7/4/d/highres_277526445.jpeg",
+    "altText": "Photo of Matt Dupont"
+  },
+  {
+    "firstName": "Ameya",
+    "lastName": "Charnalia",
+    "joined": "Feb, 2023",
+    "role": "Co-organizer",
+    "imageUrl": "https://secure.meetupstatic.com/photos/member/5/b/f/f/highres_308843551.jpeg",
+    "altText": "Photo of Ameya Charnalia"
+  },
+  {
+    "firstName": "Matt",
+    "lastName": "Millard",
+    "joined": "Sep, 2023",
+    "role": "Co-organizer",
+    "imageUrl": "https://secure.meetupstatic.com/photos/member/9/d/0/3/highres_317140195.jpeg",
+    "altText": "Photo of Matt Millard"
+  }
+]
