@@ -17,4 +17,14 @@ const projects = defineCollection({
   loader: file("./src/data/projects.json"),
 });
 
-export const collections = { pastEvents, upcomingEvents, jobs, projects };
+const meetupStats = defineCollection({
+  loader: file("./src/data/meetupStats.json"),
+});
+
+export const collections = {
+  pastEvents,
+  upcomingEvents,
+  jobs,
+  projects,
+  meetupStats,
+};

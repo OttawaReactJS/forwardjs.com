@@ -1,12 +1,15 @@
 import { writeFile } from "node:fs/promises";
 
+const MEETUP_URL = "https://www.meetup.com/ottawa-forwardjs-meetup";
+const MEETUP_ID = "28909672";
+
 async function writeJsonToFile(filename, jsonData) {
   const jsonString = JSON.stringify(jsonData, null, 2);
 
   await writeFile(filename, jsonString + "\n", "utf8");
 }
 
-async function fetchEvents(url) {
+async function getNextDataJsonFromPage(url) {
   // fetch the page and get the HTML content
   const response = await fetch(url);
   const htmlContent = await response.text();
@@ -20,11 +23,26 @@ async function fetchEvents(url) {
     .replace('<script id="__NEXT_DATA__" type="application/json">', "")
     .replace("</script>", "");
 
-  // parse the data to JSON in the hackiest way possible
-  const parsedData = JSON.parse(JSON.parse(JSON.stringify(data)));
+  return data;
+}
 
+function getApolloState(parsedData) {
   // get the APOLLO_STATE from the parsed json
   const state = parsedData.props.pageProps.__APOLLO_STATE__;
+
+  return state;
+}
+
+function doubleParseJson(data) {
+  // parse the data to JSON in the hackiest way possible
+  const parsedData = JSON.parse(JSON.parse(JSON.stringify(data)));
+  return parsedData;
+}
+
+async function fetchMeetupEvents(url) {
+  const data = await getNextDataJsonFromPage(url);
+  const parsedData = doubleParseJson(data);
+  const state = getApolloState(parsedData);
 
   // extract event data from the apollo state
   const events = [];
@@ -81,16 +99,32 @@ async function fetchEvents(url) {
   return events;
 }
 
+async function fetchMeetupStats(url) {
+  const data = await getNextDataJsonFromPage(url);
+  const parsedData = doubleParseJson(data);
+  const state = getApolloState(parsedData);
+
+  const { memberCounts, eventRatings } = state[`Group:${MEETUP_ID}`].stats;
+
+  return {
+    memberCount: memberCounts.all,
+    organizerCount: memberCounts.leadership,
+    averageEventRating: eventRatings.average,
+    totalEventRatings: eventRatings.total,
+  };
+}
+
 async function main() {
   try {
-    const upcoming = await fetchEvents(
-      "https://www.meetup.com/ottawa-forwardjs-meetup/events/?type=upcoming",
+    const meetupStats = await fetchMeetupStats(MEETUP_URL);
+    await writeJsonToFile("./src/data/meetupStats.json", meetupStats);
+
+    const upcoming = await fetchMeetupEvents(
+      `${MEETUP_URL}/events/?type=upcoming`,
     );
     await writeJsonToFile("./src/data/upcomingEvents.json", upcoming);
 
-    const past = await fetchEvents(
-      "https://www.meetup.com/ottawa-forwardjs-meetup/events/?type=past",
-    );
+    const past = await fetchMeetupEvents(`${MEETUP_URL}/events/?type=past`);
     // write the last 5 past events to the JSON files
     await writeJsonToFile("./src/data/pastEvents.json", past.slice(0, 5));
   } catch (error) {

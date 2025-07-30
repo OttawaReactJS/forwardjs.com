@@ -1,0 +1,24 @@
+---
+import { getEntry } from "astro:content";
+
+const memberCount = await getEntry("meetupStats", "memberCount");
+---
+
+<a
+  href="https://www.meetup.com/ottawa-forwardjs-meetup/"
+  target="_blank"
+  rel="noopener"
+  class="members-count">{memberCount.data.toLocaleString()} Members</a
+>
+
+<style>
+  .members-count {
+    font-weight: 600;
+  }
+
+  @media (max-width: 1000px) {
+    .members-count {
+      display: none;
+    }
+  }
+</style>
