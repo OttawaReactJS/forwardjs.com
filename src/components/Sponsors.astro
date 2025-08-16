@@ -51,7 +51,13 @@ const sponsors = [
           sponsors.map((sponsor) => (
             <li>
               <SponsorLink href={sponsor.href}>
-                <Image src={sponsor.logo} alt={`${sponsor.name} Logo`} />
+                <Image
+                  src={sponsor.logo}
+                  alt={`${sponsor.name} Logo`}
+                  decoding="async"
+                  width="135"
+                  height="72"
+                />
               </SponsorLink>
             </li>
           ))
@@ -63,7 +69,13 @@ const sponsors = [
           sponsors.map((sponsor) => (
             <li>
               <SponsorLink href={sponsor.href} hidden>
-                <Image src={sponsor.logo} alt={`${sponsor.name} Logo`} />
+                <Image
+                  src={sponsor.logo}
+                  alt={`${sponsor.name} Logo`}
+                  decoding="async"
+                  width="135"
+                  height="72"
+                />
               </SponsorLink>
             </li>
           ))
