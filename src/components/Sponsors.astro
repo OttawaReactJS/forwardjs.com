@@ -5,23 +5,25 @@ import SponsorLink from "./SponsorLink.astro";
 import Fullscript from "../assets/fullscript.svg";
 import Jetbrains from "../assets/jetbrains.svg";
 import JSNation from "../assets/jsnation.svg";
-import Owner from "../assets/owner.webp";
+import Owner from "../assets/owner.svg";
 import Shopify from "../assets/shopify.svg";
-import TalentLab from "../assets/talentlab.webp";
-import InvestOttawa from "../assets/investottawa.webp";
+import InvestOttawa from "../assets/investottawa.svg";
 
 const sponsors = [
-  { name: "Shopify", logo: Shopify, href: "https://shopify.com" },
+  {
+    name: "Shopify",
+    logo: Shopify,
+    href: "https://shopify.com",
+  },
   {
     name: "Fullscript",
     logo: Fullscript,
     href: "https://fullscript.com",
   },
-  { name: "Owner", logo: Owner, href: "https://owner.com" },
   {
-    name: "TalentLab",
-    logo: TalentLab,
-    href: "https://talentlab.com",
+    name: "Owner",
+    logo: Owner,
+    href: "https://owner.com",
   },
   {
     name: "Jetbrains",
@@ -54,9 +56,10 @@ const sponsors = [
                 <Image
                   src={sponsor.logo}
                   alt={`${sponsor.name} Logo`}
-                  decoding="async"
-                  width="135"
-                  height="72"
+                  decoding="sync"
+                  class="sponsor-logo"
+                  width={135}
+                  height={72}
                 />
               </SponsorLink>
             </li>
@@ -72,9 +75,10 @@ const sponsors = [
                 <Image
                   src={sponsor.logo}
                   alt={`${sponsor.name} Logo`}
-                  decoding="async"
-                  width="135"
-                  height="72"
+                  decoding="sync"
+                  class="sponsor-logo"
+                  width={135}
+                  height={72}
                 />
               </SponsorLink>
             </li>
@@ -102,7 +106,7 @@ const sponsors = [
     display: flex;
     flex-direction: column;
     gap: var(--gap);
-    max-width: 1418px;
+    max-width: 1200px;
     margin: auto;
   }
 
@@ -114,7 +118,7 @@ const sponsors = [
 
   .marquee__hidden {
     display: none;
-    @media screen and (max-width: 1418px) {
+    @media screen and (max-width: 1200px) {
       display: flex;
     }
   }
@@ -127,14 +131,12 @@ const sponsors = [
     gap: 16px;
     animation: none;
 
-    @media screen and (max-width: 1418px) {
+    @media screen and (max-width: 1200px) {
       animation: scroll 12s linear infinite;
     }
   }
 
-  img {
-    height: 72px;
-    width: 135px;
+  .sponsor-logo {
     object-fit: contain;
   }
 
