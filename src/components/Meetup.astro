@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { formatDateTime } from "../../public/scripts/utils";
 const {
   id,
@@ -24,7 +25,18 @@ const {
       </div>
     </div>
     <div>
-      {photo && <img class="photo" src={photo} alt="Event photo" />}
+      {
+        photo && (
+          <Image
+            class="photo"
+            src={photo}
+            alt="Event photo"
+            width="200"
+            height="112"
+            loading="lazy"
+          />
+        )
+      }
     </div>
   </div>
   <div class="row">
@@ -32,12 +44,13 @@ const {
       {
         memberPhotos.length > 0 &&
           memberPhotos.map((photo) => (
-            <img
+            <Image
               class="memberPhoto"
               src={photo}
               alt="Member photo"
               width="32"
               height="32"
+              loading="lazy"
             />
           ))
       }
