@@ -9,7 +9,6 @@ const {
   location,
   eventUrl,
   photo,
-  memberPhotos,
   rsvpCount,
   rsvpsOpen,
 } = Astro.props;
@@ -41,19 +40,6 @@ const {
   </div>
   <div class="row">
     <div class="attendees">
-      {
-        memberPhotos.length > 0 &&
-          memberPhotos.map((photo) => (
-            <Image
-              class="memberPhoto"
-              src={photo}
-              alt="Member photo"
-              width="32"
-              height="32"
-              loading="lazy"
-            />
-          ))
-      }
       <span>{rsvpCount || 0} attendees</span>
     </div>
     {
@@ -117,16 +103,7 @@ ${formatDateTime(dateTime)}`;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 8px;
     gap: 8px;
-  }
-
-  .memberPhoto {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 0.5px solid #000;
-    margin-left: -16px;
   }
 
   .photo {
