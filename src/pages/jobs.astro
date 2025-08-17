@@ -15,7 +15,7 @@ const projects = await getCollection("projects");
         {
           jobs.length > 0 ? (
             <div class="card-grid">
-              {jobs.map((job) => (
+              {jobs.reverse().map((job) => (
                 <Card
                   href={job.data.applyLink}
                   title={job.data.title}
@@ -35,7 +35,7 @@ const projects = await getCollection("projects");
         {
           projects.length > 0 ? (
             <div class="card-grid">
-              {projects.map((project) => (
+              {projects.reverse().map((project) => (
                 <Card
                   href={project.data.link}
                   title={project.data.title}

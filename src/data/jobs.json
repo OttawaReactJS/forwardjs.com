@@ -40,5 +40,33 @@
     "company": "Owner",
     "location": "Remote",
     "applyLink": "https://www.owner.com/careers/role?=a50c8e21-f712-4ac5-b0f4-1e47c1de7479"
+  },
+  {
+    "slug": "intermediate-fullstack-developer",
+    "title": "Intermediate Fullstack Developer (Ruby & React)",
+    "company": "Fullscript",
+    "location": "Remote",
+    "applyLink": "https://jobs.lever.co/fullscript/50e6ceda-b37b-4e93-bec9-28924a02cea6"
+  },
+  {
+    "slug": "senior-developer-fullstack",
+    "title": "Senior Developer, Fullstack (Ruby & React)",
+    "company": "Fullscript",
+    "location": "Remote",
+    "applyLink": "https://jobs.lever.co/fullscript/a766565e-4728-4d01-b4fc-f7ce16332d9b"
+  },
+  {
+    "slug": "senior-react-native-engineer",
+    "title": "Senior React Native Engineer, Mobile",
+    "company": "Fullscript",
+    "location": "Remote",
+    "applyLink": "https://jobs.lever.co/fullscript/fc05cf1a-5b10-4731-9543-a3e0a070e691"
+  },
+  {
+    "slug": "shopify-software-engineer",
+    "title": "Software Engineer",
+    "company": "Shopify",
+    "location": "Remote",
+    "applyLink": "https://www.shopify.com/careers/software-engineers_a72d7608-dea6-4d80-870a-33e9077a578b?"
   }
 ]
