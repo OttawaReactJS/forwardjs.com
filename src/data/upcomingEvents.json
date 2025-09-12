@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "id": "310700820",
+    "title": "ForwardJS Ottawa - September 2025",
+    "eventUrl": "https://www.meetup.com/ottawa-forwardjs-meetup/events/310700820/",
+    "dateTime": "2025-09-18T18:00:00-04:00",
+    "rsvpsOpen": true,
+    "rsvpCount": 33,
+    "photo": "https://secure.meetupstatic.com/photos/event/8/6/d/4/highres_530134516.jpeg",
+    "memberPhotos": [
+      "https://secure.meetupstatic.com/photos/member/6/7/4/d/highres_277526445.jpeg",
+      "https://secure.meetupstatic.com/photos/member/9/d/0/3/highres_317140195.jpeg",
+      "https://secure.meetupstatic.com/photos/member/5/8/5/highres_259921413.jpeg",
+      "https://secure.meetupstatic.com/photos/member/2/b/7/e/highres_314171134.jpeg"
+    ],
+    "location": {
+      "name": "Fullscript",
+      "address": "360 Albert St suite 200 Ottawa ON ca"
+    }
+  }
+]
