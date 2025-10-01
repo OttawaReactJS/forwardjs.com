@@ -1,12 +1,5 @@
 [
   {
-    "slug": "senior-software-engineer-runtime",
-    "title": "Senior Software Engineer, Runtime",
-    "company": "Sanity",
-    "location": "Remote",
-    "applyLink": "https://www.sanity.io/careers/senior-software-engineer-runtime"
-  },
-  {
     "slug": "senior-software-engineer-full-stack",
     "title": "Senior Software Engineer, Full-Stack",
     "company": "Owner",
@@ -40,13 +33,6 @@
     "company": "Fullscript",
     "location": "Remote",
     "applyLink": "https://jobs.lever.co/fullscript/50e6ceda-b37b-4e93-bec9-28924a02cea6"
-  },
-  {
-    "slug": "senior-developer-fullstack",
-    "title": "Senior Developer, Fullstack (Ruby & React)",
-    "company": "Fullscript",
-    "location": "Remote",
-    "applyLink": "https://jobs.lever.co/fullscript/a766565e-4728-4d01-b4fc-f7ce16332d9b"
   },
   {
     "slug": "senior-react-native-engineer",
