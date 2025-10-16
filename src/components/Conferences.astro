@@ -1,0 +1,225 @@
+---
+import jsnationImage from "../assets/jsnation.webp";
+import reactAdvancedImage from "../assets/RADV_Canada_event.webp";
+
+const conferences = [
+  {
+    name: "JS Nation US",
+    tagline:
+      "The main JSNation US event is coming up — Special Edition: AI for Web Dev!",
+    dates: "November 17 & 20, 2025",
+    location: "New York & Online",
+    discountCode: "FRIENDS",
+    url: "https://jsnation.us/",
+    image: jsnationImage,
+    imageAlt: "JS Nation US Conference Banner",
+  },
+  {
+    name: "React Advanced Canada",
+    tagline:
+      "React Advanced Canada lands in Toronto 🇨🇦 Join us on March 24 & 26 for 50+ talks, deep technical insights, and networking with some of the brightest minds in the industry.",
+    dates: "March 24 & 26, 2026",
+    location: "Toronto & Online",
+    discountCode: "ForwardJS",
+    url: "https://reactadvanced.com/canada/",
+    image: reactAdvancedImage,
+    imageAlt: "React Advanced Canada Logo",
+  },
+];
+---
+
+<section>
+  <div class="container">
+    <h2>PARTNER CONFERENCES</h2>
+    <div class="conferences">
+      {
+        conferences.map((conference) => (
+          <div class="conference-card">
+            <div class="conference-image">
+              <a
+                href={conference.url}
+                aria-label={`Visit ${conference.name} website`}
+              >
+                <img
+                  src={conference.image.src}
+                  alt={conference.imageAlt}
+                  loading="lazy"
+                />
+              </a>
+            </div>
+
+            <div class="conference-details">
+              <h3>{conference.name}</h3>
+              <p class="tagline">{conference.tagline}</p>
+
+              <div class="info">
+                <div class="info-item">
+                  <span class="label">When:</span>
+                  <span class="value">{conference.dates}</span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Where:</span>
+                  <span class="value">{conference.location}</span>
+                </div>
+              </div>
+
+              <div class="discount">
+                <span class="discount-label">Discount Code:</span>
+                <span class="discount-code">{conference.discountCode}</span>
+              </div>
+
+              <a href={conference.url} class="cta-button">
+                Learn More & Register
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--gray);
+    padding: 3rem 1rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .conferences {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+
+    @media screen and (max-width: 1100px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .conference-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .conference-image {
+    width: 100%;
+    overflow: hidden;
+    background: #f5f5f5;
+  }
+
+  .conference-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .conference-image:hover img {
+    transform: scale(1.05);
+  }
+
+  .conference-details {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #000;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .info-item {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .label {
+    font-weight: bold;
+    color: #000;
+    min-width: 60px;
+  }
+
+  .value {
+    color: #333;
+  }
+
+  .discount {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+    border-radius: 4px;
+    text-align: center;
+    margin-top: auto;
+  }
+
+  .discount-label {
+    font-size: 0.875rem;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .discount-code {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+    font-family: monospace;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 0.875rem 1.5rem;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .cta-button:hover {
+    background: #333;
+    transform: scale(1.02);
+  }
+
+  .cta-button:active {
+    transform: scale(0.98);
+  }
+</style>
