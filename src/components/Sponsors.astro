@@ -7,7 +7,6 @@ import Jetbrains from "../assets/jetbrains.svg";
 import Teksystems from "../assets/teksystems.svg";
 import Shopify from "../assets/shopify.svg";
 import InvestOttawa from "../assets/investottawa.svg";
-import ReactAdvancedCanada from "../assets/RADV_Canada_logo.webp";
 
 const sponsors = [
   {
@@ -34,11 +33,6 @@ const sponsors = [
     name: "Jetbrains",
     logo: Jetbrains,
     href: "https://jetbrains.com",
-  },
-  {
-    name: "React Advanced Canada",
-    logo: ReactAdvancedCanada,
-    href: "https://reactadvanced.com/canada/",
   },
 ];
 ---
@@ -106,7 +100,7 @@ const sponsors = [
     display: flex;
     flex-direction: column;
     gap: var(--gap);
-    max-width: 1440px;
+    max-width: 1005px;
     margin: auto;
   }
 
@@ -118,7 +112,7 @@ const sponsors = [
 
   .marquee__hidden {
     display: none;
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 1005px) {
       display: flex;
     }
   }
@@ -131,7 +125,7 @@ const sponsors = [
     gap: 16px;
     animation: none;
 
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 1005px) {
       animation: scroll 12s linear infinite;
     }
   }
