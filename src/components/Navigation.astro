@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import logo from "../assets/forward.svg";
 import MembersCount from "./MembersCount.astro";
 ---
@@ -7,7 +8,13 @@ import MembersCount from "./MembersCount.astro";
   <nav>
     <div class="logo">
       <a href="/">
-        <img src={logo.src} alt="ForwardJS Logo" width="32" loading="eager" />
+        <Image
+          src={logo}
+          alt="ForwardJS Logo"
+          width={32}
+          height={29}
+          loading="eager"
+        />
         <span>FORWARDJS</span>
       </a>
     </div>
