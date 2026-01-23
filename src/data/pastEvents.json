@@ -1,5 +1,25 @@
 [
   {
+    "id": "312864588",
+    "title": "ForwardJS Ottawa Social - January 2026",
+    "eventUrl": "https://www.meetup.com/ottawa-forwardjs-meetup/events/312864588/",
+    "dateTime": "2026-01-22T18:30:00-05:00",
+    "rsvpsOpen": true,
+    "rsvpCount": 70,
+    "photo": null,
+    "memberPhotos": [
+      "https://secure.meetupstatic.com/photos/member/2/b/7/e/highres_314171134.jpeg",
+      "https://secure.meetupstatic.com/photos/member/2/9/3/b/highres_321310555.jpeg",
+      "https://secure.meetupstatic.com/photos/member/6/0/e/0/highres_324204800.jpeg",
+      "https://secure.meetupstatic.com/photos/member/9/1/0/a/highres_324517130.jpeg",
+      "https://secure.meetupstatic.com/photos/member/8/0/7/9/highres_255272889.jpeg"
+    ],
+    "location": {
+      "name": "Beyond the Pale Brewing Company",
+      "address": "250 City Centre Ave Bay 106 Ottawa ON ca"
+    }
+  },
+  {
     "id": "311984346",
     "title": "ForwardJS Ottawa - November 2025",
     "eventUrl": "https://www.meetup.com/ottawa-forwardjs-meetup/events/311984346/",
@@ -77,25 +97,6 @@
     "location": {
       "name": "Shopify",
       "address": "151 O’Connor, Ottawa ON CA"
-    }
-  },
-  {
-    "id": "309672142",
-    "title": "ForwardJS Ottawa Social - July 2025",
-    "eventUrl": "https://www.meetup.com/ottawa-forwardjs-meetup/events/309672142/",
-    "dateTime": "2025-07-24T18:30:00-04:00",
-    "rsvpsOpen": true,
-    "rsvpCount": 70,
-    "photo": "https://secure.meetupstatic.com/photos/event/3/3/9/c/highres_529093212.jpeg",
-    "memberPhotos": [
-      "https://secure.meetupstatic.com/photos/member/5/b/f/f/highres_308843551.jpeg",
-      "https://secure.meetupstatic.com/photos/member/2/9/3/b/highres_321310555.jpeg",
-      "https://secure.meetupstatic.com/photos/member/2/b/7/e/highres_314171134.jpeg",
-      "https://secure.meetupstatic.com/photos/member/a/6/e/2/highres_266442722.jpeg"
-    ],
-    "location": {
-      "name": "The Royal Oak on Kent",
-      "address": "180 Kent St Ottawa ON ca"
     }
   }
 ]
