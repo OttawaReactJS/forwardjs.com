@@ -20,7 +20,12 @@ import MembersCount from "./MembersCount.astro";
     </div>
 
     <div class="hamburger-menu">
-      <button id="menuToggle" aria-label="Toggle navigation menu">
+      <button
+        id="menuToggle"
+        aria-label="Toggle navigation menu"
+        aria-controls="navItems"
+        aria-expanded="false"
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -31,8 +36,10 @@ import MembersCount from "./MembersCount.astro";
       <ul>
         <li><a href="/#events">Events</a></li>
         <li>
-          <a target="_blank" href="https://github.com/OttawaReactJS/talks"
-            >Talk Proposals</a
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/OttawaReactJS/talks">Talk Proposals</a
           >
         </li>
         <li>
@@ -214,17 +221,23 @@ import MembersCount from "./MembersCount.astro";
     const navItems = document.getElementById("navItems");
 
     if (menuToggle && navItems) {
+      const closeMenu = () => {
+        navItems.classList.remove("active");
+        menuToggle.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+      };
+
       menuToggle.addEventListener("click", function () {
-        navItems.classList.toggle("active");
-        menuToggle.classList.toggle("active");
+        const isOpen = navItems.classList.toggle("active");
+        menuToggle.classList.toggle("active", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
       });
 
       // Close menu when clicking on a link
       const navLinks = navItems.querySelectorAll("a");
       navLinks.forEach((link) => {
         link.addEventListener("click", function () {
-          navItems.classList.remove("active");
-          menuToggle.classList.remove("active");
+          closeMenu();
         });
       });
 
@@ -238,8 +251,7 @@ import MembersCount from "./MembersCount.astro";
           !isClickOnToggle &&
           navItems.classList.contains("active")
         ) {
-          navItems.classList.remove("active");
-          menuToggle.classList.remove("active");
+          closeMenu();
         }
       });
     }

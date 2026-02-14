@@ -27,13 +27,13 @@ npm install
 Start the development server:
 
 ```bash
-// fetch Meetup data
+# fetch Meetup data
 npm run data
 
-// start dev server
+# start dev server
 npm run dev
 
-// site will be available at http://localhost:4321
+# site will be available at http://localhost:4321
 ```
 
 ## 🧞 Commands
