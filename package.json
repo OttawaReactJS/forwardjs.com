@@ -21,7 +21,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "astro": "^5.16.11"
+    "astro": "^5.17.2"
   },
   "devDependencies": {
     "eslint": "^9.32.0",
