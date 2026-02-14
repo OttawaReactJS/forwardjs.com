@@ -17,7 +17,9 @@ const {
 <a id={id} href={eventUrl} class="box">
   <div class="row">
     <div class="information">
-      <date id="date">📅 {formatDateTime(dateTime)}</date>
+      <time datetime={dateTime} data-local-datetime>
+        📅 {formatDateTime(dateTime)}
+      </time>
       <span class="title">{title}</span>
       <div>
         <span>{location}</span>
@@ -42,21 +44,46 @@ const {
     <div class="attendees">
       <span>{rsvpCount || 0} attendees</span>
     </div>
-    {
-      type === "upcoming" && rsvpsOpen && (
-        <button class="rsvpButton">Attend</button>
-      )
-    }
+    {type === "upcoming" && rsvpsOpen && <span class="rsvpButton">Attend</span>}
     {type === "upcoming" && !rsvpsOpen && <span>RSVPs closed</span>}
   </div>
 </a>
 
-<script type="module" define:vars={{ id, dateTime }}>
-  import { formatDateTime } from "/scripts/utils.js";
-  const meetupElement = document.getElementById(id);
-  const dateElement = meetupElement.querySelector("#date");
-  dateElement.textContent = `📅
-${formatDateTime(dateTime)}`;
+<script is:inline>
+  (() => {
+    const localDateFormatter = new Intl.DateTimeFormat(undefined, {
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
+
+    document.querySelectorAll("time[data-local-datetime]").forEach((el) => {
+      const iso = el.getAttribute("datetime");
+      const parsedDate = iso ? new Date(iso) : null;
+
+      if (!parsedDate || Number.isNaN(parsedDate.getTime())) return;
+
+      const currentYear = new Date().getFullYear();
+      const options =
+        parsedDate.getFullYear() === currentYear
+          ? undefined
+          : {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+              hour: "numeric",
+              minute: "2-digit",
+              hour12: true,
+            };
+      const formatter = options
+        ? new Intl.DateTimeFormat(undefined, options)
+        : localDateFormatter;
+
+      el.textContent = `📅 ${formatter.format(parsedDate)}`;
+    });
+  })();
 </script>
 
 <style>
@@ -134,7 +161,7 @@ ${formatDateTime(dateTime)}`;
     color: #fff;
   }
 
-  date {
+  time {
     font-size: 0.8rem;
     color: #666;
   }

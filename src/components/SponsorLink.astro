@@ -6,9 +6,9 @@ const { href, hidden } = Astro.props;
   href={href}
   class="button"
   target="_blank"
+  rel="noopener noreferrer"
   aria-label={hidden ? "Sponsor" : undefined}
-  tabindex={hidden ? -1 : 0}
-  role={hidden ? undefined : "button"}><slot /></a
+  tabindex={hidden ? -1 : 0}><slot /></a
 >
 
 <style>
