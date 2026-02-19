@@ -15,10 +15,16 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "Mozilla Text", sans-serif;
+  font-family:
+    "Open Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   background-color: var(--gray);
   color: #000;
   scroll-behavior: smooth;
+  line-height: 1.5;
 }
 
 h1,
@@ -44,4 +50,21 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--purple);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

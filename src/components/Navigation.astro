@@ -114,6 +114,12 @@ import MembersCount from "./MembersCount.astro";
     padding: 0.5rem 1rem;
   }
 
+  .nav-items a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
   .hamburger-menu {
     display: none;
   }
@@ -156,7 +162,7 @@ import MembersCount from "./MembersCount.astro";
       max-height: 0;
       overflow: hidden;
       background-color: #fff;
-      transition: all 0.1s ease;
+      transition: max-height 0.2s ease;
     }
 
     .nav-items.active {
@@ -214,6 +220,19 @@ import MembersCount from "./MembersCount.astro";
   window.addEventListener("scroll", updateHeaderClass);
   document.addEventListener("DOMContentLoaded", updateHeaderClass);
   document.addEventListener("astro:page-load", updateHeaderClass);
+
+  function setActiveNavLink() {
+    const currentPath = window.location.pathname;
+    document.querySelectorAll(".nav-items a[href]").forEach((link) => {
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("http") || href.includes("#")) return;
+      if (href === currentPath) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", setActiveNavLink);
+  document.addEventListener("astro:page-load", setActiveNavLink);
 
   // Handle mobile menu toggle
   document.addEventListener("DOMContentLoaded", function () {

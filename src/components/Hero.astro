@@ -25,6 +25,7 @@ import HeroTypewriter from "./HeroTypewriter.astro";
     align-items: center;
     width: 100%;
     background-color: var(--gray);
+    padding: 0 1rem;
   }
 
   h1 {
@@ -34,16 +35,16 @@ import HeroTypewriter from "./HeroTypewriter.astro";
   .hero {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 1000px;
+    width: min(1000px, 100%);
     min-height: 595px;
     overflow-x: hidden;
-    transition: all 0.5s ease;
+    transition: width 0.3s ease;
     @media screen and (max-width: 1000px) {
       width: 100%;
       grid-template-columns: 1fr;
       place-items: center;
-      gap: 2rem;
-      padding: 0 2rem;
+      gap: 1.25rem;
+      padding: 1rem 2rem 0;
       min-height: auto;
     }
   }
@@ -58,11 +59,14 @@ import HeroTypewriter from "./HeroTypewriter.astro";
   }
 
   #peacetower {
+    display: block;
     width: 100%;
     max-width: 470px;
     margin-left: 2rem;
     @media screen and (max-width: 1000px) {
+      max-width: min(470px, 92vw);
       margin-left: 4rem;
+      margin-bottom: 0;
     }
   }
 </style>
