@@ -3,12 +3,20 @@
 ---
 
 <div class="container">
-  <span id="text"></span><span class="cursor"></span>
+  <span id="text" aria-live="polite"></span><span class="cursor"></span>
 </div>
 
 <script>
   function setupTypewriter() {
     const typewriterElement = document.getElementById("text");
+    if (!typewriterElement || typewriterElement.dataset.bound === "true")
+      return;
+    typewriterElement.dataset.bound = "true";
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      typewriterElement.textContent = "Tech Meetups";
+      return;
+    }
 
     const texts = [
       "Tech Meetups",
@@ -50,10 +58,11 @@
       }
     }
 
-    cycleTexts();
+    cycleTexts().catch(() => {});
   }
 
   setupTypewriter();
+  document.addEventListener("astro:page-load", setupTypewriter);
 </script>
 
 <style>
@@ -66,7 +75,7 @@
 
   #text {
     font-size: 1.5rem;
-    font-family: monospace;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   }
 
   .cursor {

@@ -14,7 +14,7 @@ const {
 } = Astro.props;
 ---
 
-<a id={id} href={eventUrl} class="box">
+<a id={id} href={eventUrl} class:list={["box", type === "past" && "box--past"]}>
   <div class="row">
     <div class="information">
       <time datetime={dateTime} data-local-datetime>
@@ -97,7 +97,9 @@ const {
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.5s ease;
+    transition:
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
     @media screen and (max-width: 675px) {
       gap: 16px;
     }

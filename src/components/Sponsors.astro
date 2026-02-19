@@ -39,7 +39,7 @@ const sponsors = [
 
 <section>
   <div class="sponsors">
-    <h2>PARTNERS</h2>
+    <h2>Partners</h2>
 
     <div class="marquee">
       <ul>
@@ -95,6 +95,12 @@ const sponsors = [
     overflow-x: hidden;
   }
 
+  @media screen and (max-width: 1000px) {
+    section {
+      padding-top: 1rem;
+    }
+  }
+
   .sponsors {
     --gap: 16px;
     display: flex;
@@ -130,6 +136,10 @@ const sponsors = [
     }
   }
 
+  .marquee:hover ul {
+    animation-play-state: paused;
+  }
+
   .sponsor-logo {
     object-fit: contain;
   }
@@ -145,6 +155,16 @@ const sponsors = [
     }
     to {
       transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    ul {
+      animation: none !important;
+    }
+
+    .marquee__hidden {
+      display: none !important;
     }
   }
 </style>
