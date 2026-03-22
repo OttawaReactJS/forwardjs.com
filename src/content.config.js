@@ -17,14 +17,10 @@ const projects = defineCollection({
   loader: file("./src/data/projects.json"),
 });
 
-const meetupStats = defineCollection({
-  loader: file("./src/data/meetupStats.json"),
-});
-
+// upcomingEvents may be empty ([]) when no events are scheduled — this is expected
 export const collections = {
   pastEvents,
   upcomingEvents,
   jobs,
   projects,
-  meetupStats,
 };
