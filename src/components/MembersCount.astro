@@ -1,14 +1,12 @@
 ---
-import { getEntry } from "astro:content";
-
-const memberCount = await getEntry("meetupStats", "memberCount");
+import meetupStats from "../data/meetupStats.json";
 ---
 
 <a
   href="https://www.meetup.com/ottawa-forwardjs-meetup/"
   target="_blank"
   rel="noopener"
-  class="members-count">{memberCount.data.toLocaleString()} Members</a
+  class="members-count">{meetupStats.memberCount.toLocaleString()} Members</a
 >
 
 <style>
