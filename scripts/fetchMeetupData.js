@@ -125,8 +125,7 @@ async function main() {
     await writeJsonToFile("./src/data/upcomingEvents.json", upcoming);
 
     const past = await fetchMeetupEvents(`${MEETUP_URL}/events/?type=past`);
-    // write the last 5 past events to the JSON files
-    await writeJsonToFile("./src/data/pastEvents.json", past.slice(0, 5));
+    await writeJsonToFile("./src/data/pastEvents.json", past);
   } catch (error) {
     console.error("Error fetching events", error);
   }

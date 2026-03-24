@@ -2,9 +2,10 @@
 import { getCollection } from "astro:content";
 import Meetup from "../components/Meetup.astro";
 
-const pastEvents = await getCollection("pastEvents");
+const pastEvents = (await getCollection("pastEvents")).sort(
+  (a, b) => new Date(b.data.dateTime) - new Date(a.data.dateTime),
+);
 const upcomingEvents = await getCollection("upcomingEvents");
-const displayedPastEvents = pastEvents.slice(0, 6);
 ---
 
 <section id="events">
@@ -46,7 +47,7 @@ const displayedPastEvents = pastEvents.slice(0, 6);
       <h3>Past</h3>
       {pastEvents.length === 0 && <p>No past events</p>}
       {
-        displayedPastEvents.map((event) => (
+        pastEvents.map((event) => (
           <Meetup
             id={event.id}
             type="past"
