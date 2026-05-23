@@ -1,5 +1,24 @@
 [
   {
+    "id": "314761979",
+    "title": "ForwardJS Ottawa - May 2026",
+    "eventUrl": "https://www.meetup.com/ottawa-forwardjs-meetup/events/314761979/",
+    "dateTime": "2026-05-21T18:00:00-04:00",
+    "rsvpsOpen": true,
+    "rsvpCount": 122,
+    "photo": "https://secure.meetupstatic.com/photos/event/5/a/f/8/highres_534203288.jpeg",
+    "memberPhotos": [
+      "https://secure.meetupstatic.com/photos/member/4/a/6/e/highres_316399054.jpeg",
+      "https://secure.meetupstatic.com/photos/member/2/b/7/e/highres_314171134.jpeg",
+      "https://secure.meetupstatic.com/photos/member/2/9/3/b/highres_321310555.jpeg",
+      "https://secure.meetupstatic.com/photos/member/9/1/0/a/highres_324517130.jpeg"
+    ],
+    "location": {
+      "name": "Shopify",
+      "address": "151 O’Connor, Ottawa ON CA"
+    }
+  },
+  {
     "id": "314325517",
     "title": "ForwardJS Ottawa Social - April 2026",
     "eventUrl": "https://www.meetup.com/ottawa-forwardjs-meetup/events/314325517/",
@@ -176,26 +195,6 @@
     "location": {
       "name": "The Royal Oak on Kent",
       "address": "180 Kent St Ottawa ON ca"
-    }
-  },
-  {
-    "id": "308420631",
-    "title": "ForwardJS Ottawa - June 2025",
-    "eventUrl": "https://www.meetup.com/ottawa-forwardjs-meetup/events/308420631/",
-    "dateTime": "2025-06-19T18:30:00-04:00",
-    "rsvpsOpen": true,
-    "rsvpCount": 125,
-    "photo": "https://secure.meetupstatic.com/photos/event/d/e/b/f/highres_528477023.jpeg",
-    "memberPhotos": [
-      "https://secure.meetupstatic.com/photos/member/5/b/f/f/highres_308843551.jpeg",
-      "https://secure.meetupstatic.com/photos/member/2/b/7/e/highres_314171134.jpeg",
-      "https://secure.meetupstatic.com/photos/member/2/9/3/b/highres_321310555.jpeg",
-      "https://secure.meetupstatic.com/photos/member/3/1/6/b/highres_320532651.jpeg",
-      "https://secure.meetupstatic.com/photos/member/2/3/c/a/highres_205389162.jpeg"
-    ],
-    "location": {
-      "name": "Fullscript",
-      "address": "360 Albert St suite 200 Ottawa ON ca"
     }
   }
 ]
