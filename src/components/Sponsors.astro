@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import SponsorLink from "./SponsorLink.astro";
 
 import Fullscript from "../assets/fullscript.svg";
@@ -44,39 +43,37 @@ const sponsors = [
     <div class="marquee">
       <ul>
         {
-          sponsors.map((sponsor) => (
-            <li>
-              <SponsorLink href={sponsor.href}>
-                <Image
-                  src={sponsor.logo}
-                  alt={`${sponsor.name} Logo`}
-                  decoding="sync"
-                  class="sponsor-logo"
-                  width={135}
-                  height={72}
-                />
-              </SponsorLink>
-            </li>
-          ))
+          sponsors.map((sponsor) => {
+            const Logo = sponsor.logo;
+            return (
+              <li>
+                <SponsorLink href={sponsor.href}>
+                  <Logo
+                    role="img"
+                    aria-label={`${sponsor.name} Logo`}
+                    class="sponsor-logo"
+                    width={135}
+                    height={72}
+                  />
+                </SponsorLink>
+              </li>
+            );
+          })
         }
       </ul>
       <!-- these items are hidden unless the marquee is active -->
       <ul aria-hidden="true" class="marquee__hidden">
         {
-          sponsors.map((sponsor) => (
-            <li>
-              <SponsorLink href={sponsor.href} hidden>
-                <Image
-                  src={sponsor.logo}
-                  alt={`${sponsor.name} Logo`}
-                  decoding="sync"
-                  class="sponsor-logo"
-                  width={135}
-                  height={72}
-                />
-              </SponsorLink>
-            </li>
-          ))
+          sponsors.map((sponsor) => {
+            const Logo = sponsor.logo;
+            return (
+              <li>
+                <SponsorLink href={sponsor.href} hidden>
+                  <Logo class="sponsor-logo" width={135} height={72} />
+                </SponsorLink>
+              </li>
+            );
+          })
         }
       </ul>
     </div>
